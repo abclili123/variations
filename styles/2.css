@@ -1,0 +1,61 @@
+/*implement one variation of this code*/
+
+
+/* Common style for all divs */
+div {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    border-style: solid;
+    border-width: 5px;
+  }
+  
+  /* Specific styles for each div */
+  #two {
+    background: rgba(0, 0, 255, 0.1); /* Light blue */
+    animation: pulse 10s infinite, rotationA 10s infinite;
+  }
+  
+  #three {
+    background: rgba(0, 255, 0, 0.1); /* Light green */
+    animation: pulse 9s infinite, rotationA 9s infinite;
+  }
+  
+  #four {
+    background: rgba(255, 0, 0, 0.1); /* Light red */
+    animation: pulse 15s infinite, rotationA 15s infinite;
+  }
+  
+  #six {
+    background: rgba(255, 255, 0, 0.1); /* Light yellow */
+    animation: pulse 12s infinite, rotationA 12s infinite;
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1.5); /* Start scaled up */
+    }
+  
+    50% {
+      transform: scale(1); /* Shrink to original size */
+    }
+  
+    100% {
+      transform: scale(1.5); /* Scale back up */
+    }
+  }
+  
+  /* Rotation animation */
+  @keyframes rotationA {
+    50% {
+      transform: rotate(180deg); /* Rotate halfway */
+    }
+  
+    100% {
+      transform: rotate(360deg); /* Full rotation */
+    }
+  }
+  

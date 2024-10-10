@@ -1,0 +1,71 @@
+/*the divs are ovals. how do i make them true circles*/
+
+@keyframes pulse {
+    0% {
+      transform: scale(1.5);
+    }
+    70% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.5);
+    }
+  }
+  
+  @keyframes rotationClockwise {
+    50% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  @keyframes rotationCounterclockwise {
+    50% {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  /* Apply circular shape */
+  #one, #two, #three, #four, #five, #six, #seven, #eight {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 30vw;  /* Equal height */
+    width: 30vw;   /* Equal width */
+    border-style: solid;
+    border-width: 5px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;  /* Makes the divs circular */
+  }
+  
+  #one {
+    animation: pulse 6s infinite, rotationClockwise 6s infinite;
+  }
+  
+  #two {
+    animation: pulse 8s infinite, rotationCounterclockwise 8s infinite;
+  }
+  
+  #three {
+    animation: pulse 7s infinite, rotationClockwise 7s infinite;
+  }
+  
+  #four {
+    animation: pulse 9s infinite, rotationCounterclockwise 9s infinite;
+  }
+  
+  #five {
+    animation: pulse 6s infinite, rotationClockwise 6s infinite;
+  }
+  
+  #six {
+    animation: pulse 8s infinite, rotationCounterclockwise 8s infinite;
+  }
+  
+  #seven {
+    animation: pulse 7s infinite, rotationClockwise 7s infinite;
+  }
+  
+  #eight {
+    animation: pulse 9s infinite, rotationCounterclockwise 9s infinite;
+  }
+  

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variations With ChatGPT</title>
+    <!-- Placeholder for dynamically changing the stylesheet -->
+    <link id="theme-style" rel="stylesheet" href="styles/1.css">
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="six"></div>
+    <div id="seven"></div>
+    <div id="eight"></div>
+
+    <!-- Container for displaying the first line comment -->
+    <div id="comment-display" style="margin-top: 20px; font-size: 16px;"></div>
+
+    <script>
+        let currentCssFile = 1;
+        const maxCssFiles = 21; // Total number of CSS files
+        const commentDisplay = document.getElementById('comment-display');
+        const styleElement = document.getElementById('theme-style');
+
+        // Comments associated with each CSS file
+        const comments = {
+            1: '/*original*/',
+            2: '/*implement one variation of this code*/',
+            3: '/*implement one interesting variation of this code*/',
+            4: '/* implement another variation*/',
+            5: '/*make a variation of the original code that is interesting but not complicated and doesnt add many lines of code*/',
+            6: '/*how would make the divs circles*/',
+            7: '/*the divs are ovals. how do i make them true circles*/',
+            8: '/*make the divs colorful again*/',
+            9: '/*can you make the circles move around the page in vertical and horizontal directions as well*/',
+            10: '/*make the circles move around randomly*/',
+            11: '/*can the circles move in curves instead of straightlines*/',
+            12: '/*where are you using cubic Bezier curves*/',
+            13: '/*can you make some of the circles triangles */',
+            14: '/*this did not work as intended, now i have one circle and one triangle */',
+            15: '/*i think it is because they all have the same size and animation when they are supposed to have variations of both size and animation*/',
+            16: '/*the triangles are not moving*/',
+            17: '/*this looks like squares moving, but each square has a triangle inside*/',
+            18: '/*each div must have a different animation*/',
+            19: '/*remove the black outline around all of the shapes*/',
+            20: '/*make the shapes pulse again and make all of the animations different durations*/',
+            21: '/*make the shapes rotate again*/',
+        }
+
+        // Function to load a CSS file and display the comment
+        function loadCssFile(index) {
+            const filePath = `styles/${index}.css`;
+            styleElement.setAttribute('href', filePath); // Switch the CSS file
+            commentDisplay.textContent = comments[index] || 'No comment found'; // Display comment
+        }
+
+        // Function to handle arrow key presses
+        function handleKeyDown(event) {
+            if (event.key === 'ArrowRight') {
+                event.preventDefault(); // Prevent page scroll
+                currentCssFile = (currentCssFile % maxCssFiles) + 1;
+                loadCssFile(currentCssFile);
+            } else if (event.key === 'ArrowLeft') {
+                event.preventDefault(); // Prevent page scroll
+                currentCssFile = (currentCssFile - 1) || maxCssFiles;
+                loadCssFile(currentCssFile);
+            }
+        }
+
+        // Add event listener for keydown events
+        window.addEventListener('keydown', handleKeyDown);
+
+        // Load the first CSS file on page load
+        loadCssFile(currentCssFile);
+    </script>
+</body>
+</html>

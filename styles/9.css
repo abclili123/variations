@@ -1,0 +1,100 @@
+/*can you make the circles move around the page in vertical and horizontal directions as well*/
+
+@keyframes pulse {
+    0% {
+      transform: scale(1.5);
+    }
+    70% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.5);
+    }
+  }
+  
+  @keyframes rotationClockwise {
+    50% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  @keyframes rotationCounterclockwise {
+    50% {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes moveAround {
+    0% {
+      top: 10%;
+      left: 10%;
+    }
+    25% {
+      top: 10%;
+      left: 70%;
+    }
+    50% {
+      top: 70%;
+      left: 70%;
+    }
+    75% {
+      top: 70%;
+      left: 10%;
+    }
+    100% {
+      top: 10%;
+      left: 10%;
+    }
+  }
+  
+  /* Apply circular shape */
+  #one, #two, #three, #four, #five, #six, #seven, #eight {
+    position: absolute;
+    height: 15vw;  /* Equal height */
+    width: 15vw;   /* Equal width */
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50%;  /* Makes the divs circular */
+  }
+  
+  /* Adding colors and movement */
+  #one {
+    background: rgba(0, 0, 255, 0.2);  /* Light blue */
+    animation: pulse 6s infinite, rotationClockwise 6s infinite, moveAround 12s infinite ease-in-out;
+  }
+  
+  #two {
+    background: rgba(0, 255, 0, 0.2);  /* Light green */
+    animation: pulse 8s infinite, rotationCounterclockwise 8s infinite, moveAround 14s infinite ease-in-out;
+  }
+  
+  #three {
+    background: rgba(255, 0, 0, 0.2);  /* Light red */
+    animation: pulse 7s infinite, rotationClockwise 7s infinite, moveAround 16s infinite ease-in-out;
+  }
+  
+  #four {
+    background: rgba(255, 255, 0, 0.2);  /* Light yellow */
+    animation: pulse 9s infinite, rotationCounterclockwise 9s infinite, moveAround 18s infinite ease-in-out;
+  }
+  
+  #five {
+    background: rgba(0, 255, 255, 0.2);  /* Light cyan */
+    animation: pulse 6s infinite, rotationClockwise 6s infinite, moveAround 20s infinite ease-in-out;
+  }
+  
+  #six {
+    background: rgba(255, 0, 255, 0.2);  /* Light magenta */
+    animation: pulse 8s infinite, rotationCounterclockwise 8s infinite, moveAround 22s infinite ease-in-out;
+  }
+  
+  #seven {
+    background: rgba(128, 0, 128, 0.2);  /* Light purple */
+    animation: pulse 7s infinite, rotationClockwise 7s infinite, moveAround 24s infinite ease-in-out;
+  }
+  
+  #eight {
+    background: rgba(255, 165, 0, 0.2);  /* Light orange */
+    animation: pulse 9s infinite, rotationCounterclockwise 9s infinite, moveAround 26s infinite ease-in-out;
+  }
+  

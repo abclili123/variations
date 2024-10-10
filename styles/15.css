@@ -1,0 +1,119 @@
+/*i think it is because they all have the same size and animation when they are supposed to have variations of both size and animation*/
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.5);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes rotationClockwise {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes curvedMove {
+  0% {
+    top: 5%;
+    left: 5%;
+  }
+  25% {
+    top: 20%;
+    left: 30%;
+  }
+  50% {
+    top: 70%;
+    left: 50%;
+  }
+  75% {
+    top: 40%;
+    left: 80%;
+  }
+  100% {
+    top: 5%;
+    left: 5%;
+  }
+}
+
+/* Apply styles */
+#one, #two, #three, #four {
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 50%;  /* Circle */
+  animation: pulse 6s infinite, rotationClockwise 6s infinite, curvedMove 12s infinite cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+/* Circle styles */
+#one {
+  height: 10vw;
+  width: 10vw;
+  background: rgba(0, 0, 255, 0.5);  /* Light blue */
+  animation-duration: 6s, 6s, 12s;  /* Same as original */
+}
+
+#two {
+  height: 15vw;
+  width: 15vw;
+  background: rgba(0, 255, 0, 0.5);  /* Light green */
+  animation-duration: 8s, 8s, 14s;  /* Slightly longer */
+}
+
+#three {
+  height: 12vw;
+  width: 12vw;
+  background: rgba(255, 0, 0, 0.5);  /* Light red */
+  animation-duration: 7s, 7s, 13s;  /* Middle duration */
+}
+
+#four {
+  height: 18vw;
+  width: 18vw;
+  background: rgba(255, 255, 0, 0.5);  /* Light yellow */
+  animation-duration: 5s, 5s, 11s;  /* Shorter duration */
+}
+
+/* Triangle styles */
+#five, #six, #seven, #eight {
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);  /* Triangle */
+}
+
+/* Triangle styles */
+#five {
+  height: 10vw;  /* Same height as one */
+  width: 10vw;  /* Same width as one */
+  background: rgba(255, 0, 255, 0.5);  /* Light magenta */
+  animation-duration: 6s, 6s, 12s;  /* Same as one */
+}
+
+#six {
+  height: 15vw;  /* Same height as two */
+  width: 15vw;  /* Same width as two */
+  background: rgba(255, 165, 0, 0.5);  /* Light orange */
+  animation-duration: 8s, 8s, 14s;  /* Same as two */
+}
+
+#seven {
+  height: 12vw;  /* Same height as three */
+  width: 12vw;  /* Same width as three */
+  background: rgba(0, 255, 255, 0.5);  /* Light cyan */
+  animation-duration: 7s, 7s, 13s;  /* Same as three */
+}
+
+#eight {
+  height: 18vw;  /* Same height as four */
+  width: 18vw;  /* Same width as four */
+  background: rgba(128, 0, 128, 0.5);  /* Light purple */
+  animation-duration: 5s, 5s, 11s;  /* Same as four */
+}
+
+  
